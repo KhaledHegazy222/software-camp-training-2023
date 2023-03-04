@@ -706,6 +706,18 @@ for example:
     }
 ```
 
+Common Standard functions in C:
+
+    printf()
+    scanf()
+    abs()
+    sqrt()
+    pow()
+    ceil()
+    sin()
+    cos()
+
+
 ### Preprocessor Directives
 
 > Preprocessor directives are commands that are processed by the C preprocessor before the actual compilation of the code begins. They start with a pound sign `#` and are used to perform various tasks such as including header files, defining macros, and conditional compilation.
