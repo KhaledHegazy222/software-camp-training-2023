@@ -12,16 +12,7 @@
 -   Expressions
 -   [Branching](#branching)
 -   [Loops](#loops)
--   Arrays
-    -   Structure
-    -   Storage in memory
-    -   Declaration vs Initialization
-    -   Accessing Elements
-    -   Iterating over array
-    -   Special types of arrays
-        -   Character array
-    -   Multidimensional Array
-    -   sizeof operator with array
+-   [Arrays](#arrays)
 
 ### Variables
 
@@ -556,3 +547,79 @@
 
         // 0 1 2 3 4
         ```
+### Arrays
+
+> In C, an `array` is a collection of elements of the `same type`, stored `contiguously` in memory. 
+- Structure
+
+    ![alt text](https://www.programiz.com/sites/tutorial2program/files/c-arrays.jpg "Arrays in C")
+- Storage in Memory
+
+    ![alt text](https://media.geeksforgeeks.org/wp-content/uploads/array-2.png "Arrays in C")
+    
+-   Declaration vs Initialization
+
+    ```C
+        // Here I have 10 Garbage values stored in the array
+        int arr1[10];
+        // Here I have 10 Values numbered from 1 to 10 stored in the array
+        int arr2[10] = {1,2,3,4,5,6,7,8,9,10};
+    ```
+
+
+-   Accessing Elements
+    > In C, you can access individual elements of an array using the array name and an index. The index represents the position of the element in the array, starting from 0.
+
+    for example : 
+
+
+    ```C
+        int my_array[5] = {10, 20, 30, 40, 50};
+
+        // Accessing the first element of the array
+        int first_element = my_array[0];
+
+        // Accessing the second element of the array
+        int second_element = my_array[1];
+
+        // Changing the value of the third element of the array
+        my_array[2] = 35;
+
+        /*
+            Note that : 
+                We assign values to the array elements using the curly braces { }. To access an individual element of the array, we use the array name and an index inside square brackets [ ].
+
+        */
+    ```
+
+-   Iterating over array
+    
+    ```C
+
+        // Reading Array elements
+        int arr1[5];
+        for(int i = 0;i < 5;i++){
+            scanf("%d",&arr1[i]);
+        }
+
+        // Printing Array Values
+        int arr2[5] = {10, 20, 30, 40, 50};
+        for(int i = 0;i < 5;i++){
+            printf("%d\n",arr2[i]);
+        }
+    ```
+
+-   Special types of arrays
+    -   Character array
+        > In C, a string is represented as an array of characters terminated by a null character ('\0'). This null character is used to mark the end of the string and is automatically added by the compiler when you initialize a string.
+
+        for example : 
+        
+        ```C
+            char my_string[] = "Hello, world!";
+            /*
+            In this example, we have defined a character array named my_string and initialized it with the string "Hello, world!". The array has a length of 14 characters (including the null character).
+            */
+        ```
+-   Multidimensional Array
+-   sizeof operator with array
