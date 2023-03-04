@@ -13,7 +13,8 @@
 -   [Branching](#branching)
 -   [Loops](#loops)
 -   [Arrays](#arrays)
-
+-   [Functions](#functions)
+-   [Preprocessor Directives](#preprocessor-directives)
 ### Variables
 
 -   Declaration vs Initialization
@@ -623,3 +624,59 @@
         ```
 -   Multidimensional Array
 -   sizeof operator with array
+
+
+
+### Functions
+> A function in C is a block of code that performs a specific task and is used to break down a program into smaller, reusable pieces. It is defined with a name, a return type, and a set of parameters that specify the input values.
+
+Syntax:
+
+```C
+    return_type function_name(parameter1, parameter2, ...) {
+
+        // Code that performs a specific task
+
+        // Return statement
+        return result; 
+    }
+```
+
+for example:
+
+```C
+    int add(int a, int b) {
+        int result = a + b;
+        return result;
+    }
+
+    int main(){
+        int x = 11;
+        int y = 12;
+
+        printf("%d\n", add(x,y));
+    }
+
+
+```
+
+
+### Preprocessor Directives
+
+> Preprocessor directives are commands that are processed by the C preprocessor before the actual compilation of the code begins. They start with a pound sign `#` and are used to perform various tasks such as including header files, defining macros, and conditional compilation.
+
+
+common preprocessor directives:
+
+```C
+    #include    // used to include header files   
+    #define     // used to define macros
+
+    // the others will be discussed later
+    #ifdef      
+    #ifndef
+    #if
+    #else
+    #pragma
+    #error
+```
