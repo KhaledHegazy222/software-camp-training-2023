@@ -4,17 +4,15 @@
 
 -   [Variables](#variables)
 -   [Interacting with user](#interacting-with-user)
--   Casting
-    -   Implicit
-    -   Explicit
+-   [Casting](#casting)
 -   [Operators](#operators)
 -   [Comments](#comments)
--   Expressions
 -   [Branching](#branching)
 -   [Loops](#loops)
 -   [Arrays](#arrays)
 -   [Functions](#functions)
 -   [Preprocessor Directives](#preprocessor-directives)
+
 ### Variables
 
 -   Declaration vs Initialization
@@ -272,6 +270,46 @@
     -   Clear Bit
     -   Toggle Bit
 
+### Casting
+
+> Casting is the process of converting a value from one data type to another.
+
+-   Implicit Casting
+
+    > Implicit casting occurs automatically when the compiler converts a value from one data type to another in certain situations.
+
+    for example:
+
+    ```C
+        int x = 5;
+        float y = 2.5;
+        float result = x + y;
+        /*
+        In this example, the integer value x is implicitly cast to a float value, so that it can be added to the float value y. The result of the addition is then stored in the float variable result.
+        */
+    ```
+
+-   Explicit Casting
+    > Explicit casting requires the use of a cast operator, which explicitly instructs the compiler to convert a value from one data type to another.
+
+    for example :
+    
+    ```C
+        
+        // The Default Behavior in This case when dividing integers
+        // the result will be casted to integer implicitly.
+        // So y will hold the value of the division result = 5
+        int x = 11;
+        float y = x / 2;
+        printf("%f",y); // Here prints 5
+
+
+        // after explicitly casting x to be float before division
+        // will keep the real value after the division
+        int x = 11;
+        float y = (float) x / 2;
+        printf("%f",y); // Here prints 5.5
+    ```
 ### Comments
 
 -   One line Comment
@@ -520,10 +558,13 @@
         ```
 
 -   Keywords
+
     -   Continue
+
         > `continue` is a keyword used in loops (for, while, and do-while) to skip the current iteration and move on to the next iteration. When continue is encountered in a loop, the remaining statements in the loop body are skipped, and control jumps back to the loop header to re-evaluate the loop condition.
 
-        for example: 
+        for example:
+
         ```C
             for (int i = 0; i < 10; i++) {
                 if (i == 5) {
@@ -534,10 +575,13 @@
 
             // 0 1 2 3 4 6 7 8 9
         ```
+
     -   Break
+
         > `break` is a keyword used in loops (for, while, and do-while) and switch statements to exit the loop or switch statement prematurely. When break is encountered in a loop or switch statement, the control immediately jumps to the statement immediately following the loop or switch.
 
         for example:
+
         ```C
         for (int i = 0; i < 10; i++) {
             if (i == 5) {
@@ -548,16 +592,19 @@
 
         // 0 1 2 3 4
         ```
+
 ### Arrays
 
-> In C, an `array` is a collection of elements of the `same type`, stored `contiguously` in memory. 
-- Structure
+> In C, an `array` is a collection of elements of the `same type`, stored `contiguously` in memory.
+
+-   Structure
 
     ![alt text](https://www.programiz.com/sites/tutorial2program/files/c-arrays.jpg "Arrays in C")
-- Storage in Memory
+
+-   Storage in Memory
 
     ![alt text](https://media.geeksforgeeks.org/wp-content/uploads/array-2.png "Arrays in C")
-    
+
 -   Declaration vs Initialization
 
     ```C
@@ -567,12 +614,11 @@
         int arr2[10] = {1,2,3,4,5,6,7,8,9,10};
     ```
 
-
 -   Accessing Elements
+
     > In C, you can access individual elements of an array using the array name and an index. The index represents the position of the element in the array, starting from 0.
 
-    for example : 
-
+    for example :
 
     ```C
         int my_array[5] = {10, 20, 30, 40, 50};
@@ -587,14 +633,14 @@
         my_array[2] = 35;
 
         /*
-            Note that : 
+            Note that :
                 We assign values to the array elements using the curly braces { }. To access an individual element of the array, we use the array name and an index inside square brackets [ ].
 
         */
     ```
 
 -   Iterating over array
-    
+
     ```C
 
         // Reading Array elements
@@ -611,23 +657,25 @@
     ```
 
 -   Special types of arrays
+
     -   Character array
+
         > In C, a string is represented as an array of characters terminated by a null character ('\0'). This null character is used to mark the end of the string and is automatically added by the compiler when you initialize a string.
 
-        for example : 
-        
+        for example :
+
         ```C
             char my_string[] = "Hello, world!";
             /*
             In this example, we have defined a character array named my_string and initialized it with the string "Hello, world!". The array has a length of 14 characters (including the null character).
             */
         ```
+
 -   Multidimensional Array
 -   sizeof operator with array
 
-
-
 ### Functions
+
 > A function in C is a block of code that performs a specific task and is used to break down a program into smaller, reusable pieces. It is defined with a name, a return type, and a set of parameters that specify the input values.
 
 Syntax:
@@ -638,7 +686,7 @@ Syntax:
         // Code that performs a specific task
 
         // Return statement
-        return result; 
+        return result;
     }
 ```
 
@@ -656,24 +704,20 @@ for example:
 
         printf("%d\n", add(x,y));
     }
-
-
 ```
-
 
 ### Preprocessor Directives
 
 > Preprocessor directives are commands that are processed by the C preprocessor before the actual compilation of the code begins. They start with a pound sign `#` and are used to perform various tasks such as including header files, defining macros, and conditional compilation.
 
-
 common preprocessor directives:
 
 ```C
-    #include    // used to include header files   
+    #include    // used to include header files
     #define     // used to define macros
 
     // the others will be discussed later
-    #ifdef      
+    #ifdef
     #ifndef
     #if
     #else
