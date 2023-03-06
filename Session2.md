@@ -5,6 +5,7 @@
 - [Preprocessor Directives](#preprocessor-directives)
 - [Functions](#functions)
 - [Recursion](#recursion)
+- [Variables Cont.](#variables-cont)
 
 ### Preprocessor Directives
 
@@ -67,76 +68,84 @@ common preprocessor directives:
         ceil()
         sin()
         cos()
+
 - Applications:
-    - Range Prime Checker Function:
 
-        prototype : 
+  - Range Prime Checker Function:
 
-            bool isPrime(int);
+    prototype :
 
-        body :
+          bool isPrime(int);
 
-        ```C
-            bool isPrime(int x){
-                if(x < 2)
+    body :
+
+    ```C
+        bool isPrime(int x){
+            if(x < 2)
+                return false;
+            for(int i = 2;i < x;i++){
+                if(x % i == 0)
                     return false;
-                for(int i = 2;i < x;i++){
-                    if(x % i == 0)
-                        return false;
-                }
-                return true;
             }
-        ```
-        usage:
-        ```C
+            return true;
+        }
+    ```
 
-            // Calculate The number of primes in Range from Left to Right
+    usage:
 
-            int left,right;
-            scanf("%d%d",&left,&right);
-            int primeNumbers = 0;
-            for(int i = left;i <= right;i++){
-                if(isPrime(i))
-                    primeNumbers++;
+    ```C
+
+        // Calculate The number of primes in Range from Left to Right
+
+        int left,right;
+        scanf("%d%d",&left,&right);
+        int primeNumbers = 0;
+        for(int i = left;i <= right;i++){
+            if(isPrime(i))
+                primeNumbers++;
+        }
+        printf("The number of Primes in Range [%d : %d] = %d",left,right,primeNumbers);
+
+
+    ```
+
+  - Power Function:
+
+    prototype :
+
+          int power(int,int);
+
+    body :
+
+    ```C
+        int power(int b,int p){
+            int result = 1;
+            while(p--){
+                result *= b;
             }
-            printf("The number of Primes in Range [%d : %d] = %d",left,right,primeNumbers);
+            return result;
+        }
+    ```
+
+    usage:
+
+    ```C
+
+        // Evaluate This Function (F) for any value of (x)
+        // F(x) = 11 * (x ^ 4) - 3 * (x ^ 3) + 12 * x  - 25
+
+        int x;
+        scanf("%d",&x);
+
+        int result = 11 * power(x,4) - 3 * power(x,3) + 12 * x - 25;
+
+        printf("F(%d) = %d",x,result);
 
 
-        ```
+    ```
 
-    - Power Function:
-
-        prototype : 
-
-            int power(int,int);
-
-        body :
-
-        ```C
-            int power(int b,int p){
-                int result = 1;
-                while(p--){
-                    result *= b;
-                }
-                return result;
-            }
-        ```
-        usage:
-        ```C
-
-            // Evaluate This Function (F) for any value of (x)
-            // F(x) = 11 * (x ^ 4) - 3 * (x ^ 3) + 12 * x  - 25
-
-            int x;
-            scanf("%d",&x);
-
-            int result = 11 * power(x,4) - 3 * power(x,3) + 12 * x - 25;
-
-            printf("F(%d) = %d",x,result);
-
-
-        ```
 ### Recursion:
+
 > Defining a problem in terms of itself.
 
 for example:
@@ -151,6 +160,7 @@ for example:
         }
     }
 ```
+
 Let's see how this function works for the input `n = 5` :
 
     factorial(5)    = 5 * factorial(4)
@@ -183,5 +193,51 @@ Let's see how this function works for the input `n = 4` :
                     = ((1 + 0) + 1) + (1 + 0)
                     = 3
 
+### Variables Cont.
+
+- Static
+
+  > In C, the `static` keyword is used to limit the scope or lifetime of a variable or function to the current file or block, respectively.
+
+  for example:
+
+  ```C
+      int howManyCalls() {
+          static int x = 0;
+          x++;
+          return x;
+      }
+
+      int main() {
+          printf("This function get called %d Time(s).\n",howManyCalls()); // 1
+          printf("This function get called %d Time(s).\n",howManyCalls()); // 2
+          printf("This function get called %d Time(s).\n",howManyCalls()); // 3
+          printf("This function get called %d Time(s).\n",howManyCalls()); // 4
+          printf("This function get called %d Time(s).\n",howManyCalls()); // 5
+          return 0;
+      }
+
+  ```
+
+  Important Note:
+
+  `static` keyword is used also in another cases (with global variables and function) and will be discussed later.
+
+- Constant
+
+    > In C, the `const` keyword is used to define a variable that cannot be modified after its initialization.
+
+    syntax:
+
+        const <data_type> <variable_name> = <initial_value>;
 
 
+    for example:
+    ```C
+        const int MAX_VALUE = 100;
+        int main() {
+            // Attempting to modify a const variable will result in a compiler error
+            MAX_VALUE = 200;
+            return 0;
+        }
+    ```
