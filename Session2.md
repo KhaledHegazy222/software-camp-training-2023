@@ -377,6 +377,120 @@ Let's see how this function works for the input `n = 4` :
         Employee salary: 5000.000000
 
 
+- Union
+
+    > ser-defined data type that allows you to store different types of data in the same memory location. A union is similar to a structure in C, but with one major difference: a structure stores each of its members in a `separate memory location`, while a union stores all of its members in the `same memory location`.
 
 
 
+    Syntax:
+
+        The syntax for defining a struct in C is as follows:
+            union union_name {
+                data_type member1;
+                data_type member2;
+                .
+                .
+                .
+                data_type memberN;
+            };
+
+
+        Declaration:
+            union union_name variable_name;
+
+        Initialization:
+            union union_name variable_name = {value1, value2, ..., valueN};
+
+        To access the members of a union variable, you can use the dot (.) operator.    
+        Accessing:
+            variable_name.member1 = value;
+
+
+
+    for example:
+
+    ```C
+        union my_union {
+            int x;
+            float y;
+        };
+
+        int main() {
+            union my_union u;
+            u.x = 10;
+            printf("Value of u.x: %d\n", u.x);
+            u.y = 3.14;
+            printf("Value of u.y: %f\n", u.y);
+            printf("Value of u.x: %d\n", u.x);
+            return 0;
+        }
+    ```
+
+    the output:
+
+        Value of u.x: 10
+        Value of u.y: 3.140000
+        Value of u.x: 1078523331
+
+
+
+- enum
+
+    > enum is a user-defined data type that allows you to define a set of named constants.
+
+    Syntax:
+
+        enum enum_name {
+            identifier1,
+            identifier2,
+            .
+            .
+            .
+            identifierN
+        };
+
+
+    for example:
+    ```C
+        #include <stdio.h>
+
+        enum months {
+            JAN = 1,
+            FEB,
+            MAR,
+            APR,
+            MAY,
+            JUN,
+            JUL,
+            AUG,
+            SEP,
+            OCT,
+            NOV,
+            DEC
+        };
+
+        int main() {
+            enum months m = MAY;
+            printf("Month number: %d\n", m); // 5
+            return 0;
+        }
+    ```
+
+    another example:
+
+    ```C
+        #include <stdio.h>
+
+        enum fruits {
+            APPLE = 10,
+            ORANGE = 20,
+            BANANA = 30
+        };
+
+        int main() {
+            enum fruits f = ORANGE;
+            printf("Fruit value: %d\n", f); // 20
+            return 0;
+        }
+    ```
