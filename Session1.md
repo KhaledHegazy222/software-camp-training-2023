@@ -44,6 +44,7 @@
           [signed / unsigned] [short / long / long long] int : integer
           float : floating decimal point
           double : double precision floating decimal point
+          long double : long double precision floating decimal point
 
 -   Naming Rules
 -   Naming Convention
@@ -62,6 +63,19 @@
     ```
 
 -   Storage in memory
+
+    > In C, the size of each variable depends on its data type.
+
+    Here are the standard sizes for each data type:
+
+        char           1 byte
+        short          2 bytes
+        int            4 bytes
+        long           4 or 8 bytes (depending on the platform)
+        long long      8 bytes
+        float          4 bytes
+        double         8 bytes
+        long double    8 or 16 bytes (depending on the platform)
 
 -   Behavior
 
@@ -263,10 +277,47 @@
     ```
 
 -   Applications of operators
+
     -   Get Bit
     -   Set Bit
     -   Clear Bit
     -   Toggle Bit
+
+-   floating numbers comparison:
+
+    for example:
+
+    ```C
+        #include<stdio.h>
+        int main()
+        {
+            float x = 0.1;
+            if (x == 0.1)
+                printf("IF");
+            else if (x == 0.1f)
+                printf("ELSE IF");
+            else
+                printf("ELSE");
+        }
+    ```
+
+    another example:
+
+    ```C
+        #include<stdio.h>
+        int main()
+        {
+            float x = 0.1;
+            if (x == 0.5)
+                printf("IF");
+            else if (x == 0.5f)
+                printf("ELSE IF");
+            else
+                printf("ELSE");
+        }
+    ```
+
+    for more details Read this [article](https://www.geeksforgeeks.org/comparison-float-value-c/).
 
 ### Casting
 
@@ -288,12 +339,13 @@
     ```
 
 -   Explicit Casting
+
     > Explicit casting requires the use of a cast operator, which explicitly instructs the compiler to convert a value from one data type to another.
 
     for example :
-    
+
     ```C
-        
+
         // The Default Behavior in This case when dividing integers
         // the result will be casted to integer implicitly.
         // So y will hold the value of the division result = 5
@@ -308,6 +360,7 @@
         float y = (float) x / 2;
         printf("%f",y); // Here prints 5.5
     ```
+
 ### Comments
 
 -   One line Comment
@@ -670,4 +723,44 @@
         ```
 
 -   Multidimensional Array
+
+    - Structure:
+    
+        ![alt text](https://techvidvan.com/tutorials/wp-content/uploads/sites/2/2021/06/Multidimensional-Arrays-in-C.jpg "Arrays in C")
+
+    - syntax:
+
+            data_type array_name[size1][size2]...[sizeN];
+
+        for example:
+
+        ```C
+            // Declaration
+            int x = myArray[1][2];
+            // Initialization:
+            int myArray[3][4] = {
+                {1, 2, 3, 4},
+                {5, 6, 7, 8},
+                {9, 10, 11, 12}
+            };
+
+        ```
+
 -   sizeof operator with array
+
+    > When used with arrays, sizeof returns the size of the entire array in bytes.
+
+    for example:
+
+    ```C
+        int myArray[10];
+        int size = sizeof(myArray); // 40
+    ```
+
+    Important usage:
+
+    How to Calculate number of elements in array at `compile time`:
+
+    ```C
+        int numElements = sizeof(myArray) / sizeof(myArray[0]);
+    ```
