@@ -279,9 +279,22 @@
 -   Applications of operators
 
     -   Get Bit
+
+    ```C
+        int bitValue = (num >> bit) & 1;
+    ```
     -   Set Bit
+    ```C
+        num = num | (1 << bit);
+    ```
     -   Clear Bit
+    ```C
+        num = num & (~(1 << bit));
+    ```
     -   Toggle Bit
+    ```C
+        num = num ^ (1 << bit);
+    ```
 
 -   floating numbers comparison:
 
