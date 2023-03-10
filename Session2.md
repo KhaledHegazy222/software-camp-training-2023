@@ -222,34 +222,6 @@ Let's see how this function works for the input `n = 4` :
       }
   ```
 
-- Static
-
-  > In C, the `static` keyword is used to limit the scope or lifetime of a variable or function to the current file or block, respectively.
-
-  for example:
-
-  ```C
-      int howManyCalls() {
-          static int x = 0;
-          x++;
-          return x;
-      }
-
-      int main() {
-          printf("This function get called %d Time(s).\n",howManyCalls()); // 1
-          printf("This function get called %d Time(s).\n",howManyCalls()); // 2
-          printf("This function get called %d Time(s).\n",howManyCalls()); // 3
-          printf("This function get called %d Time(s).\n",howManyCalls()); // 4
-          printf("This function get called %d Time(s).\n",howManyCalls()); // 5
-          return 0;
-      }
-
-  ```
-
-  Important Note:
-
-  `static` keyword is used also in another cases (with global variables and function) and will be discussed later.
-
 - Constant
 
   > In C, the `const` keyword is used to define a variable that cannot be modified after its initialization.
@@ -268,59 +240,6 @@ Let's see how this function works for the input `n = 4` :
           return 0;
       }
   ```
-
-- Register:
-
-  > Register is a keyword in C which suggests the system to use register as a memory for a variable instead of RAM.
-
-  Syntax:
-
-      register <datatype> <variable_name>;
-
-  for example:
-
-  ```C
-      #include <stdio.h>
-
-      int main()
-      {
-          for(register int i = 1; i <= 5; i++)
-              printf("%d", i);
-          return 0;
-      }
-  ```
-
-  Some key points regarding register in C:
-
-  - register only suggests using register memory
-  - We cannot get the memory location of such a variable
-
-    Normal way of getting memory location of a variable is using the & operator like:
-
-    ```C
-        int i = 0;
-        printf("%p", &i);
-    ```
-
-    output:
-
-          0x7fff3d4f4934
-
-    If i, the variable is declared as a register, it will give compile time error. For example:
-
-    ```C
-        register int i = 0;
-        printf("%p", &i);
-    ```
-
-    Compile time error:
-
-          opengenus.c: In function 'main':
-          opengenus.c:6:5: error: address of register variable 'i' requested
-              printf("%p", &i);
-              ^
-
-  - We can get the size using sizeof()
 
 ### User-defined Data types
 
