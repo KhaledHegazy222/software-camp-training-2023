@@ -166,7 +166,7 @@
 
         %d	Signed integer
         %u	Unsigned integer
-        %f	Floating-point number
+        %f %g	Floating-point number
         %lf	Double-precision floating-point number
         %c	Character
         %s	String
@@ -194,7 +194,7 @@
                 // For Post Increment
                 int x = 11;
                 printf("%d\n",x++); // Here Prints 11
-                printf("%d\n");     // Here Prints 12
+                printf("%d\n",x);     // Here Prints 12
 
                 // For Pre Increment
                 int y = 11;
@@ -307,7 +307,7 @@
         #include<stdio.h>
         int main()
         {
-            float x = 0.1;
+            float x = 0.5;
             if (x == 0.5)
                 printf("IF");
             else if (x == 0.5f)
@@ -662,7 +662,7 @@
         // Here I have 10 Garbage values stored in the array
         int arr1[10];
         // Here I have 10 Values numbered from 1 to 10 stored in the array
-        int arr2[10] = {1,2,3,4,5,6,7,8,9,10};
+        int arr2[10] = {};
     ```
 
 -   Accessing Elements
