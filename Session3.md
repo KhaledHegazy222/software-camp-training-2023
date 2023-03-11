@@ -8,7 +8,7 @@
 -   [Pointers casting](#pointers-casting)
 -   [Dynamic Memory Allocation](#dynamic-memory-allocation)
 -   [Pointer vs Array](#pointer-vs-array)
--   Pointers and functions
+-   [Pointers and functions](#pointers-with-functions)
 -   Pointer to pointer
 
 ### Definition of pointers
@@ -344,4 +344,53 @@ example:
         int* ptr = fun();
         printf("%d\n",*ptr);
     }
+```
+
+### Pointer To Pointer
+
+![pointer to pointer](https://www.elfinanciero.com.mx/resizer/taCG2O68GSkqmP3cGOBdRaVScVE=/1200x630/filters:format(jpg):quality(70)/cloudfront-us-east-1.images.arcpublishing.com/elfinanciero/VLY7KEXGNNHNDML3AJHYDUZA3Q.jpg)
+
+> In C programming language, a pointer to a pointer is a type of pointer that points to the memory address of another pointer. 
+
+```C
+    // Declaration
+    int** ptr;
+
+    // Initialization
+    int*  ptr1;
+    int** ptr2 = &ptr1;
+```
+
+for example:
+
+```C
+    int x = 11;
+    int *ptr1 = &x;
+    int **ptr2 = &ptr1;
+
+    **ptr2 = 12;
+    printf("%d",*ptr1); // 12
+```
+
+another example:
+
+```C
+
+    void allocateMemory(int **ptr, int size) {
+        *ptr = (int *)malloc(size * sizeof(int));
+    }
+
+    int main() {
+        int *arr;
+        int size = 5;
+        allocateMemory(&arr, size);
+        // Now we can use 'arr' to access the dynamically allocated memory
+        arr[0] = 1;
+        arr[1] = 2;
+        // ...
+        free(arr);
+        return 0;
+    }
+
+
 ```
