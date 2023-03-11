@@ -9,7 +9,7 @@
 -   [Dynamic Memory Allocation](#dynamic-memory-allocation)
 -   [Pointer vs Array](#pointer-vs-array)
 -   [Pointers and functions](#pointers-with-functions)
--   Pointer to pointer
+-   [Pointer to pointer](#pointer-to-pointer)
 
 ### Definition of pointers
 
@@ -214,6 +214,7 @@ for example:
 > Arrays and Pointers are similar in that they both deal with memory locations in C, but they have some key differences. Arrays are `fixed` in size and can be accessed using the subscript operator, while pointers are variables that store memory addresses and can be reassigned to point to `different` memory locations.
 
 for example:
+
 ```C
     int arr[3] = {1, 2, 3};
     for (int i = 0; i < 3; i++) {
@@ -231,7 +232,7 @@ for example:
     }
 
     ////////////////////////////////
-    
+
     int arr[3] = {1, 2, 3};
     int *ptr = arr; // arr == &arr[0];
     for (int i = 0; i < 3; i++) {
@@ -257,13 +258,12 @@ for example:
     }
 ```
 
-
-
 ### Pointers with functions
 
-- Parameter
-    
+-   Parameter
+
     examples:
+
     ```C
         void addStore(int a,int b,int *c){
             *c = a + b;
@@ -277,8 +277,6 @@ for example:
             printf("%d\n",c);
         }
     ```
-
-
 
     ```C
         void swap(int a,int b){
@@ -297,7 +295,7 @@ for example:
 
 
         // The correct version for swap
-        
+
         void swap(int* a,int* b){
             int c = *a;
             *a = *b;
@@ -314,14 +312,12 @@ for example:
 
     ```
 
-
-
-- Return Value
+-   Return Value
 
 example:
 
 ```C
-    // What is wrong with this code ? 
+    // What is wrong with this code ?
     int* fun(){
         int x = 11;
         return &x;
@@ -348,9 +344,9 @@ example:
 
 ### Pointer To Pointer
 
-![pointer to pointer](https://www.elfinanciero.com.mx/resizer/taCG2O68GSkqmP3cGOBdRaVScVE=/1200x630/filters:format(jpg):quality(70)/cloudfront-us-east-1.images.arcpublishing.com/elfinanciero/VLY7KEXGNNHNDML3AJHYDUZA3Q.jpg)
+![pointer to pointer](<https://www.elfinanciero.com.mx/resizer/taCG2O68GSkqmP3cGOBdRaVScVE=/1200x630/filters:format(jpg):quality(70)/cloudfront-us-east-1.images.arcpublishing.com/elfinanciero/VLY7KEXGNNHNDML3AJHYDUZA3Q.jpg>)
 
-> In C programming language, a pointer to a pointer is a type of pointer that points to the memory address of another pointer. 
+> In C programming language, a pointer to a pointer is a type of pointer that points to the memory address of another pointer.
 
 ```C
     // Declaration
