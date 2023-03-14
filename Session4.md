@@ -3,8 +3,15 @@
 ### Searching
 
 -   Read the documentation of the languages
--   Read & Write to files
+
+    for examples:
+
+    -   Convert double to string
+    -   generate random numbers
+    -   File Handling
+
 -   Explore New Libraries
+    > We will be discussed briefly in Arduino Session
 
 ### Debugging
 
@@ -92,22 +99,30 @@ What is the problem with these code snippets
           clearBacklog(backlog, MILLISECONDS_PER_DAY);
 
 -   Don't repeat yourself (DRY)
+    for example:
 
-    ```C
-        int n;
-        int main(){
-            scanf("%d",&n);
-            int arr[n];
-            for(int i = 0;i < n;i++){
-                scanf("%d",arr + i);
-            }
+```C
+    #include <stdio.h>
 
-            for(int i = 0;i < n;i++){
-                printf("%d, ",arr[i]);
-            }
+    int sum(int arr[], int size) {
+        int result = 0;
+        for (int i = 0; i < size; i++) {
+            result += arr[i];
         }
+        return result;
+    }
 
-    ```
+    int main() {
+        int arr1[] = {1, 2, 3, 4, 5};
+        int arr2[] = {10, 20, 30};
+        int sum1 = sum(arr1, 5);
+        int sum2 = sum(arr2, 3);
+        printf("Sum of arr1: %d\n", sum1);
+        printf("Sum of arr2: %d\n", sum2);
+        return 0;
+    }
+```
+
 
 -   Uses highly descriptive variable names
 
@@ -403,13 +418,19 @@ What is the problem with these code snippets
     }
     ```
 
-
 ### C is Very powerful programming language
-    
+
     The only limitation of what you can build is your imagination.
 
-- C / C++ programs examples
+-   C / C++ programs examples
 
-    - Simple Login System
-    - Image filters
-    - Chess engines 
+    -   Simple Login System
+    -   Image filters
+    -   Chess engines
+
+### Additional Resources
+
+-   [Neso Academy](https://www.youtube.com/playlist?list=PLBlnK6fEyqRhX6r2uhhlubuF5QextdCSM)
+-   [Pointers in C](https://www.youtube.com/playlist?list=PL2_aWCzGMAwLZp6LMUKI3cc7pgGsasm2_)
+-   [A Modern Approach](https://drive.google.com/file/d/129n7tb8gIAVDFftBgymHq98sgIkqw6oo/view?usp=share_link)
+-   [Understanding and Using C Pointers](https://drive.google.com/file/d/15c38tNQJIIiem_PQErl_oHzkXc9ly8Fu/view?usp=share_link)
