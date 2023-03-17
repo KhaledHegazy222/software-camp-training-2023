@@ -29,8 +29,6 @@ What is the problem with these code snippets
         }
         return 0;
     }
-
-
 ```
 
 ```C
@@ -414,7 +412,7 @@ What is the problem with these code snippets
         if n == 1:
             return arr[0];
         else:
-            return max(arr[n-1], max_element(arr, n-1));
+            return max(arr[n-1], fun(arr, n-1));
     }
     ```
 
