@@ -51,8 +51,8 @@ Important notes :
           ...
 
 -   void pointer `void*`
--   Wild pointers
--   Dangling pointers
+-   Wild pointers (Uninitialized)
+-   Dangling pointers (Freed Pointer)
 -   null pointers
 
 ### Pointers Arithmetic
